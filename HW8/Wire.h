@@ -13,8 +13,7 @@ public:
 	void SetVal(string name, int value);
 	void SetHist(string name, int value, vector <int>& hist );
 	void SetDrives(string name, vector<Gate*> drives);
-	void printHistory() const;
-
+	void printHistory(string name, vector<int> hist) const;
 private:
 	int value;
 	string name;

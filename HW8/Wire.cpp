@@ -6,7 +6,7 @@
 #include "Wire.h"
 
 Wire::Wire(string name, int value, vector<Gate*> drives, int index, vector<int> history){
-
+	
 }
 
 void Wire::SetVal(string name, int value) {
@@ -23,3 +23,14 @@ void Wire::SetDrives(string name, vector<Gate*> drives) {
 	
 }
 
+void printHistory(string name, vector<int> hist) const{
+	
+		for (hist.size()) {
+			if (hist.at(i) == 0){
+			cout<<"_"
+			}
+			else if (hist.at(i) == 1) {
+			cout<<"-"
+			}
+		}
+}
