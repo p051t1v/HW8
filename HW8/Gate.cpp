@@ -1,19 +1,41 @@
 #include "Gate.h"
 
-
-int Gate::getDelay(int delay) const{
-	this->delay = delay;
-	return 0;
+int Gate::getDelay() const
+{
+	return this->delay;
 }
 
-Wire* Gate::getInput() const{
-	return nullptr;
+Wire* Gate::getInput(int input) const
+{
+	return inputs.at(input);
 }
 
-Wire* Gate::getOutput() const{
-	return nullptr;
+Wire* Gate::getOutput() const
+{
+	return output;
 }
 
-bool Gate::evaluate() const{
+int Gate::evaluate() const
+{
+	if(inputs.at(0)->value == -1)
+	if (type == AND) {
+		if (inputs.at(0)->value >= 1 && inputs.at(1)->value >= 1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	if (type == OR) {
+		if (inputs.at(0)->value >= 1 || inputs.at(1)->value >= 1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	if (type == NOT) {
+		return !(inputs.at(0)->value);
+	}
 	return 0;
 }
