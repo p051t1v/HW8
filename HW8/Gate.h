@@ -4,6 +4,7 @@
 #Define AND = 1;
 #Define OR = 2;
 #Define NOT = 3;
+#Define X = -1;
 
 
 using namespace std;
