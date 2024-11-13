@@ -5,9 +5,21 @@
 
 #include "Wire.h"
 
-// The linked-list is constructed of Node elements
-struct Wire {
-    int input;
-    int output;
-};
+Wire::Wire(string name, int value, vector<Gate*> drives, int index, vector<int> history){
+
+}
+
+void Wire::SetVal(string name, int value) {
+	this->value = value;
+}
+
+void Wire::SetHist(string name, int value, vector <int>& hist) {
+	if (value != NULL){
+		hist.push_back(this->value);
+	}
+}
+
+void Wire::SetDrives(string name, vector<Gate*> drives) {
+	
+}
 

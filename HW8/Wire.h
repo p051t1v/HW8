@@ -9,10 +9,10 @@ using namespace std;
 
 class Wire {
 public:
-	Wire();
-	void Wire::SetVal();
-	void Wire::SetHist();
-	void Wire::SetDrives();
+	Wire(string name, int value, vector<Gate*> drives, int index, vector<int> history);
+	void SetVal(string name, int value);
+	void SetHist(string name, int value, vector <int>& hist );
+	void SetDrives(string name, vector<Gate*> drives);
 	void printHistory() const;
 
 private:
