@@ -6,7 +6,6 @@
 #include "Wire.h"
 
 Wire::Wire(string name, int value, vector<Gate*> drives, int index, vector<int> history){
-	
 }
 
 void Wire::SetVal(string name, int value) {
