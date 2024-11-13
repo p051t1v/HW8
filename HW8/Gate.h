@@ -4,7 +4,7 @@
 using namespace std;
 
 class Gate {
-	Gate();
+	Gate(int type);
 	int getDelay() const;
 	Wire* getInput(int) const;
 	Wire* getOutput() const;
