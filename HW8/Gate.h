@@ -13,8 +13,7 @@ class Gate {
 private:
 	int type;
 	int delay;
-	Wire* input1;
-	Wire* input2;
+	vector<Wire*> inputs;
 	Wire* output;
 
 };
