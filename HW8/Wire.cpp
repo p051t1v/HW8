@@ -12,23 +12,14 @@
 // The linked-list is constructed of Node elements
 struct Node {
     int   key;
-    Node* next;
+    Wire* next;
 };
 
 // the following function is not a member function, it is a convenience
 // function which exists to make the implementation of the LLSortedPosInt
 // class more concise
-
-// createNode() allocates a Node and initializes it with the
-// given parameter values to simplify the initilization of a Node
-static Wire createWire(int key, WirePtr wp) {
-    // allocate a new Node for storing the given key value
-    NodePtr n = new Node;
-
-    // store the key value and the next pointer
+void MakeWire(int key) {
     n->key = key;
-    n->next = p;
-
     // return the new Node to the caller
     return n;
 }
