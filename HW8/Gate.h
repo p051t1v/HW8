@@ -14,7 +14,7 @@ class Gate {
 	int getDelay() const;
 	Wire* getInput(int input) const;
 	Wire* getOutput() const;
-	bool evaluate() const;
+	int evaluate() const;
 
 private:
 	int type;
