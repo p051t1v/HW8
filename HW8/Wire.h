@@ -8,8 +8,8 @@
 
 using namespace std;
 
-struct  Node;
-typedef Node* NodePtr;
+struct  Wire;
+typedef Wire* WirePtr;
 
 // The key value HEAD_OF_LIST is used as a "sentinal" value
 const int HEAD_OF_LIST = -1;
@@ -17,20 +17,20 @@ const int HEAD_OF_LIST = -1;
 class Wire {
 public:
     // constructors
-    Wire(int wireID, bool binary);
+    Wire(int key, bool binary);
     // destructor
     ~Wire();
-    bool isZero(int wireNum);
+    bool isZero(int key);
 private:
     // helper functions
-    void                  insert(int key);
-    void                  remove(int key);
+    void MakeWire(int key);
+    void MakeGate(int key);
 
     // NOTE: see also the non-member function createNode() associated .cpp file
 
     // the data member for this class is a single item similar to the example
     // in ZyBook 12.21
-    NodePtr head;
+    WirePtr head;
 };
 
 #endif //LLSPOSINT_H
