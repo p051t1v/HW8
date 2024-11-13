@@ -17,7 +17,9 @@ Wire* Gate::getOutput() const
 
 int Gate::evaluate() const
 {
-	if(inputs.at(0)->value == -1)
+	if(inputs.at(0)->value == X || inputs.at(1)->value == X){
+		return X;
+	}
 	if (type == AND) {
 		if (inputs.at(0)->value >= 1 && inputs.at(1)->value >= 1) {
 			return true;
