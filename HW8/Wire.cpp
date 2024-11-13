@@ -5,31 +5,36 @@
 
 #include "Wire.h"
 
-Wire::Wire(string name, int value, vector<Gate*> drives, int index, vector<int> history){
+Wire::Wire(string name,int index){
+	this->name = name;
+		this->index = index;
 }
 
-void Wire::SetVal(string name, int value) {
+
+void Wire::SetVal(int index, int value) {
 	this->value = value;
 }
 
-void Wire::SetHist(string name, int value, vector <int>& hist) {
+void Wire::SetHist(int value, vector <int>& hist) {
 	if (value != NULL){
 		hist.push_back(this->value);
 	}
 }
 
-void Wire::SetDrives(string name, vector<Gate*> drives) {
-	
+void Wire::AddDrives(Gate* gate) {
+	drives.push_back(gate);
 }
 
-void printHistory(string name, vector<int> hist) const{
-	
-		for (hist.size()) {
-			if (hist.at(i) == 0){
-			cout<<"_"
-			}
-			else if (hist.at(i) == 1) {
-			cout<<"-"
-			}
+void printHistory(vector<int> hist) const {
+	for (int i:hist) {
+		if (i == 0){
+			cout << "_";
 		}
+		else if (i == 1) {
+			cout << "-";
+		}
+		else {
+			cout << "X";
+		}
+	}
 }

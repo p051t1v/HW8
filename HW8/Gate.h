@@ -11,7 +11,7 @@ using namespace std;
 
 class Gate {
 	Gate(int type, int delay, vector<Wire*> inputs, Wire* output);
-	int getDelay() const;
+	int getDelay(int delay) const;
 	Wire* getInput(int input) const;
 	Wire* getOutput() const;
 	int evaluate() const;
