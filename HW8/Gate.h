@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Author:  Keith A. Shomper
 // Date:    2/13/20
 // Purpose: To specify a simple, linked-list of sorted positive integers
@@ -87,3 +88,5 @@ private:
 #endif //LLSPOSINT_H
 */
 
+=======
+>>>>>>> 8eb990d41283364832e58d7d82c849b39cb90ece
