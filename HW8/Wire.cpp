@@ -17,7 +17,7 @@ struct Node {
 
 // createNode() allocates a Node and initializes it with the
 // given parameter values to simplify the initilization of a Node
-static NodePtr createNode(int key, NodePtr p) {
+static Wire createWire(int key, WirePtr wp) {
     // allocate a new Node for storing the given key value
     NodePtr n = new Node;
 
