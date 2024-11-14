@@ -25,6 +25,31 @@ void Wire::AddDrives(Gate* gate) {
 	drives.push_back(gate);
 }
 
+vector<int> Wire::getHistory()
+{
+	return history;
+}
+
+vector<Gate*> Wire::getDrives()
+{
+	return drives;
+}
+
+int Wire::getIndex()
+{
+	return index;
+}
+
+string Wire::getName()
+{
+	return name;
+}
+
+int Wire::getValue()
+{
+	return value;
+}
+
 void printHistory(vector<int> hist) const {
 	for (int i:hist) {
 		if (i == 0){

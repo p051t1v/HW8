@@ -19,6 +19,11 @@ public:
 	void SetHist(int value, vector <int>& hist );
 	void AddDrives(Gate* gate);
 	// get everyting
+	int getValue();
+	string getName();
+	int getIndex();
+	vector<int> getHistory();
+	vector<Gate*> getDrives();
 	void printHistory(vector<int> hist) const;
 private:
 	int value=DNF;
