@@ -15,13 +15,16 @@ void Wire::SetVal(int index, int value) {
 	this->value = value;
 }
 
-void Wire::SetHist(int value, vector <int>& hist) {
-	if (value != NULL){
+void Wire::SetHist(int value, vector <int>& hist)
+{
+	if (value != NULL)
+	{
 		hist.push_back(this->value);
 	}
 }
 
-void Wire::AddDrives(Gate* gate) {
+void Wire::AddDrives(Gate* gate) 
+{
 	drives.push_back(gate);
 }
 
@@ -50,15 +53,20 @@ int Wire::getValue()
 	return value;
 }
 
-void printHistory(vector<int> hist) const {
-	for (int i:hist) {
-		if (i == 0){
+void printHistory(vector<int> hist) const
+{
+	for (int i:hist)
+	{
+		if (i == 0)
+		{
 			cout << "_";
 		}
-		else if (i == 1) {
+		else if (i == 1)
+		{
 			cout << "-";
 		}
-		else {
+		else
+		{
 			cout << "X";
 		}
 	}
