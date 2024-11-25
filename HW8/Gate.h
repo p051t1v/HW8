@@ -1,21 +1,17 @@
 #pragma once
 #include "Wire.h"
-
-
 #include <vector>
-#include "Gate.h"
 
+#define HI 1
+#define LO 0
+#define DNF -1
+#define X = -1;
 #define AND = 1;
 #define OR = 2;
 #define NOT = 3;
 #define XOR = 4;
-#define NAM#include <string>
-
-using namespace std;
-
-
-
-
+#define NAM
+#include <string>
 
 using namespace std;
 
