@@ -7,6 +7,7 @@
 #define HI 1
 #define LO 0
 #define DNF -1
+#define X = -1;
 
 using namespace std;
 

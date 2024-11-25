@@ -1,5 +1,8 @@
 #include "Gate.h"
 
+Gate::Gate(int type, int delay, vector<Wire*> output) {
+}
+
 int Gate::getDelay(int delay) const
 {
 	return this->delay;
