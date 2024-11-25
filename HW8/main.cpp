@@ -8,7 +8,7 @@ int main() {
 	cin << fileName;
 	fstream fs;
 	fs.open(fileName + ".txt", in);
-
+	fs.open(fileName + "_v.txt", in);
 	fs.close();
 	return 0;
 }
