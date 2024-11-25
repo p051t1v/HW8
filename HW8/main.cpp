@@ -3,7 +3,7 @@
 
 using namespace std;
 int main() {
-	cout << "Hello World";
+	cout << "Type the name of the circuit file you wish to simulate:" << endl;
 
 	return 0;
 
