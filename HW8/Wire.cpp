@@ -57,11 +57,11 @@ void printHistory(vector<int> hist) const
 {
 	for (int i:hist)
 	{
-		if (i == 0)
+		if (i == LO)
 		{
 			cout << "_";
 		}
-		else if (i == 1)
+		else if (i == HI)
 		{
 			cout << "-";
 		}
