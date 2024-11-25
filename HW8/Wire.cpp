@@ -38,6 +38,14 @@ vector<Gate*> Wire::getDrives()
 	return drives;
 }
 
+void Wire::printHistory(vector<int> hist) const
+{
+	for (int i = 0; i < history.size(); i++) 
+	{
+		cout << hist.at(i);
+	}
+}
+
 int Wire::getIndex()
 {
 	return index;

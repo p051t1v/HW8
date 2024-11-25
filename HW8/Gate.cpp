@@ -18,9 +18,8 @@ Wire* Gate::getOutput() const
 	return output;
 }
 
-int Gate::evaluate() const
-{
-	// make sure this gets fixed!!!
+int Gate::evaluate() const{
+	
 	if(inputs.at(0)->0value == X || inputs.at(1)->value == X){
 		return X;
 	}
@@ -36,7 +35,7 @@ int Gate::evaluate() const
 		}
 	}
 	if (type == OR) {
-		if (inputs.at(0)->value == 1 || inputs.at(1)->value == 1) {
+		if (inputs.at(0)->value == HI || inputs.at(1)->value == HI) {
 			return HI;
 		}
 		else {
