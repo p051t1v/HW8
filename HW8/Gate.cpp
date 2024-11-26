@@ -23,7 +23,7 @@ int Gate::evaluate() const{
 	if(inputs.at(0)->0value == X || inputs.at(1)->value == X){
 		return X;
 	}
-	if (type == AND) {
+	else if (type == AND) {
 		if (inputs.at(0)->value == 1 && inputs.at(1)->value == 1) {
 			return HI;
 		}
@@ -34,15 +34,18 @@ int Gate::evaluate() const{
 			return X;
 		}
 	}
-	if (type == OR) {
+	else if (type == OR) {
 		if (inputs.at(0)->value == HI || inputs.at(1)->value == HI) {
 			return HI;
 		}
-		else {
+		else if(inputs.at(0)->value == LO && inputs.at(1)->value == LO){
 			return LO;
 		}
+		else {
+			return X;
+		}
 	}
-	if (type == XOR) {
+	else if (type == XOR) {
 		if (input.at(0) == X || input.at(1) == X) {
 			return X;
 		}
@@ -53,7 +56,7 @@ int Gate::evaluate() const{
 			return LO;
 		}
 	}
-	if (type == NOT) {
+	else if (type == NOT) {
 		if(inputs.at(0)==HI)
 		return LO;
 		else if (inputs.at(0) == LO) {
