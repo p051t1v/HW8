@@ -54,9 +54,9 @@ int Gate::evaluate() const{
 		}
 	}
 	if (type == NOT) {
-		if(inputs.at(0)==0)
+		if(inputs.at(0)==HI)
 		return LO;
-		else if (inputs.at(0) == 1) {
+		else if (inputs.at(0) == LO) {
 		return HI;
 		}
 		else {
