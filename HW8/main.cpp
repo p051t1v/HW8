@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <Gate.cpp>
 
 using namespace std;
 int main() {
@@ -16,6 +17,7 @@ int main() {
 		fs.open(fileName + "_v.txt", in);
 		fs.close();
 	}
+
 
 	
 	return 0;
