@@ -1,6 +1,7 @@
 #pragma once
 #include "Wire.h"
 #include <vector>
+#include <string>
 
 #define HI 1
 #define LO 0
@@ -11,7 +12,7 @@
 #define OR = 2;
 #define NOT = 3;
 #define XOR = 4;
-#include <string>
+
 
 using namespace std;
 
