@@ -4,11 +4,7 @@
 #include <vector>
 #include "Gate.h"
 
-
-
 using namespace std;
-
-
 
 class Wire {
 public:
