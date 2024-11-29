@@ -1,8 +1,10 @@
 #include "Gate.h"
 
+//default constructor
 Gate::Gate(int type, int delay, vector<Wire*> output) {
 }
 
+//get everything
 int Gate::getDelay(int delay) const
 {
 	return this->delay;
@@ -18,6 +20,7 @@ Wire* Gate::getOutput() const
 	return output;
 }
 
+//Evaluate function
 int Gate::evaluate() const{
 	
 	if(inputs.at(0)->0value == X || inputs.at(1)->value == X){
