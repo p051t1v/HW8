@@ -5,7 +5,7 @@ Wire::Wire(string name,int index){
 	this->index = index;
 }
 
-
+// Set everything
 void Wire::SetVal(int index, int value) {
 	this->value = value;
 }
@@ -17,12 +17,12 @@ void Wire::SetHist(int value, vector <int>& hist)
 		hist.push_back(this->value);
 	}
 }
-
+//Adding Drives (inputs) to a gate
 void Wire::AddDrives(Gate* gate) 
 {
 	drives.push_back(gate);
 }
-
+// Get Everything
 vector<int> Wire::getHistory()
 {
 	return history;
@@ -31,14 +31,6 @@ vector<int> Wire::getHistory()
 vector<Gate*> Wire::getDrives()
 {
 	return drives;
-}
-
-void Wire::printHistory(vector<int> hist) const
-{
-	for (int i = 0; i < history.size(); i++) 
-	{
-		cout << hist.at(i);
-	}
 }
 
 int Wire::getIndex()
@@ -56,7 +48,8 @@ int Wire::getValue()
 	return value;
 }
 
-void printHistory(vector<int> hist) const
+// Print Function
+void Wire::printHistory(vector<int> hist) const
 {
 	for (int i:hist)
 	{

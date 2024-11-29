@@ -3,6 +3,8 @@
 #include <Gate.cpp>
 
 using namespace std;
+
+
 int main() {
 	string select;
 	cout << "Would you like to make a circuit or use a file?" << endl;
