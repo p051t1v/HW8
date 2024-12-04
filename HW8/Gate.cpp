@@ -27,51 +27,69 @@ int Gate::getType()
 }
 
 //Evaluate function
-int Gate::evaluate() const{
+int Gate::evaluate() const
+{
 	
-	if(inputs.at(0) == X || inputs.at(1) == X){
+	if(inputs.at(0) == X || inputs.at(1) == X)
+	{
 		return X;
 	}
-	else if (type == AND) {
-		if (inputs.at(0) == HI && inputs.at(1) == HI) {
+	else if (type == AND) 
+	{
+		if (inputs.at(0) == HI && inputs.at(1) == HI) 
+		{
 			return HI;
 		}
-		else if(inputs.at(0) == LO||inputs.at(1) == LO){
+		else if(inputs.at(0) == LO||inputs.at(1) == LO)
+		{
 			return LO;
 		}
-		else {
+		else
+		{
 			return X;
 		}
 	}
-	else if (type == OR) {
-		if (inputs.at(0)->getValue() == HI || inputs.at(1)->getValue() == HI) {
+	else if (type == OR) 
+	{
+		if (inputs.at(0)->getValue() == HI || inputs.at(1)->getValue() == HI) 
+		{
 			return HI;
 		}
-		else if(inputs.at(0) == LO && inputs.at(1) == LO){
+		else if(inputs.at(0) == LO && inputs.at(1) == LO)
+		{
 			return LO;
 		}
-		else {
+		else
+		{
 			return X;
 		}
 	}
-	else if (type == XOR) {
-		if (inputs.at(0)->getValue() == X || inputs.at(1)->getValue() == X) {
+	else if (type == XOR)
+	{
+		if (inputs.at(0)->getValue() == X || inputs.at(1)->getValue() == X) 
+		{
 			return X;
 		}
-		else if (inputs.at(0) != inputs.at(1)) {
+		else if (inputs.at(0) != inputs.at(1)) 
+		{
 			return HI;
 		}
-		else {
+		else 
+		{
 			return LO;
 		}
 	}
 	else if (type == NOT) {
-		if(inputs.at(0)->getValue() == HI)
+		if (inputs.at(0)->getValue() == HI)
+		{
 			return LO;
-		else if (inputs.at(0) == LO) {
+		}
+		else if (inputs.at(0) == LO) 
+		{
 			return HI;
 		}
-		else {
+		else
+		{
 			return X;
 		}
 	}

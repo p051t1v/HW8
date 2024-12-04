@@ -3,9 +3,9 @@
 #include <vector>
 #include "Gate.h"
 
-#define HI 1
-#define LO 0
-#define DNF -1;
+#define HI = 1;
+#define LO = 0;
+#define DNF = -1;
 #define X = -1;
 
 #define NOT = 1;
