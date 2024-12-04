@@ -2,7 +2,8 @@
 #include <fstream>
 #include <string>
 #include <queue>
-#include <Gate.cpp>
+#include "Gate.cpp"
+
 
 using namespace std;
 
