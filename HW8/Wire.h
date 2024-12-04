@@ -1,8 +1,16 @@
 
 #include <string>
 #include <vector>
-#include "Gate.h"
-#include "Wire.cpp"
+
+#define HI 1
+#define LO 0
+#define DNF -1
+#define X = -1;
+
+#define NOT = 1;
+#define AND = 2;
+#define OR = 3;
+#define XOR = 4;
 
 using namespace std;
 

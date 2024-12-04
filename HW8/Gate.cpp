@@ -1,4 +1,5 @@
-#include "Gate.h"
+#include <Gate.h>
+#include <Wire.cpp>
 
 //default constructor
 Gate::Gate(int type, int delay, vector<Wire*> output) {
