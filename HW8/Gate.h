@@ -1,8 +1,7 @@
 #pragma once
-#include "Wire.h"
 #include <vector>
 #include <string>
-
+class Wire;
 
 using namespace std;
 
@@ -11,12 +10,13 @@ class Gate {
 	Gate(int type, int delay, vector<Wire*> inputs, Wire* output);
 
 	//Get everything
-	int getDelay(int delay) const;
-	Wire* getInput(int input) const;
+	int getDelay() const;
+	Wire* getInput(int index) const;
 	Wire* getOutput() const;
 	int getType();
+	
 	//Evaluate the gate
-	int evaluate() const;
+    void evaluate() const;
 
 private:
 	int type;

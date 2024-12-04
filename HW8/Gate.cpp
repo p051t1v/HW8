@@ -1,19 +1,23 @@
 #include "Gate.h"
 #include "Wire.h"
 
+
 //default constructor
-Gate::Gate(int type, int delay,  vector<Wire*> inputs, Wire* output) {
-}
+Gate::Gate(int type, int delay, vector<Wire*> inputs, Wire* output)
+   :type(type), delay(delay), inputs(inputs), output(output) {}
+
+//set everything
+
 
 //get everything
-int Gate::getDelay(int delay) const
+int Gate::getDelay() const
 {
 	return this->delay;
 }
 
-Wire* Gate::getInput(int input) const
+ Wire* Gate::getInput(int index) const
 {
-	return inputs.at(input);
+	return this->inputs.at(index);
 }
 
 Wire* Gate::getOutput() const
@@ -27,71 +31,71 @@ int Gate::getType()
 }
 
 //Evaluate function
-int Gate::evaluate() const
+void Gate::evaluate() const
 {
 	
-	if(inputs.at(0) == X || inputs.at(1) == X)
+	if((inputs.at(0)->getValue() == X) && (inputs.at(0)->getValue() == X))
 	{
-		return X;
+		output->SetVal(X);
 	}
-	else if (type == AND) 
+	else if (type == AND)
 	{
-		if (inputs.at(0) == HI && inputs.at(1) == HI) 
+		if (inputs.at(0)->getValue() == HI && inputs.at(1)->getValue() == HI)
 		{
-			return HI;
+			output->SetVal(HI);
 		}
-		else if(inputs.at(0) == LO||inputs.at(1) == LO)
+		else if(inputs.at(0)->getValue() == LO || inputs.at(1)->getValue() == LO)
 		{
-			return LO;
+			output->SetVal(LO);
 		}
 		else
 		{
-			return X;
+			output->SetVal(X);
 		}
 	}
 	else if (type == OR) 
 	{
 		if (inputs.at(0)->getValue() == HI || inputs.at(1)->getValue() == HI) 
 		{
-			return HI;
+			output->SetVal(HI);
 		}
-		else if(inputs.at(0) == LO && inputs.at(1) == LO)
+		else if(inputs.at(0)->getValue() == LO && inputs.at(1)->getValue() == LO)
 		{
-			return LO;
+			output->SetVal(LO);
 		}
 		else
 		{
-			return X;
+			output->SetVal(X);
 		}
 	}
 	else if (type == XOR)
 	{
 		if (inputs.at(0)->getValue() == X || inputs.at(1)->getValue() == X) 
 		{
-			return X;
+			output->SetVal(X);
 		}
-		else if (inputs.at(0) != inputs.at(1)) 
+		else if (inputs.at(0)->getValue() != inputs.at(1)->getValue()) 
 		{
-			return HI;
+			output->SetVal(HI);
 		}
 		else 
 		{
-			return LO;
+			output->SetVal(LO);
 		}
 	}
 	else if (type == NOT) {
 		if (inputs.at(0)->getValue() == HI)
 		{
-			return LO;
+			output->SetVal(LO);
 		}
-		else if (inputs.at(0) == LO) 
+		else if (inputs.at(0)->getValue() == LO)
 		{
-			return HI;
+			output->SetVal(HI);
 		}
 		else
 		{
-			return X;
+			output->SetVal(X);
 		}
 	}
-	return 0;
+	return;
 }
