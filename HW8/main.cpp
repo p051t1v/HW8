@@ -28,6 +28,7 @@ int main() {
 		//read file and initialize wire and gate objects
 		string input;
 		vector<int> numInputs;
+		vector<Wire*> inputs;
 		string name;
 		string delay;
 		string type;
@@ -47,7 +48,8 @@ int main() {
 			}
 			else if (input == "AND" || input == "OR" || input == "XOR") {
 				//create gate and connect the wires and gate
-				//fs >> delay >>;
+				int n1, n2, n3;
+				//fs >> delay >> n1 >> n2 >> n3;
 				//new vector<>;
 				if (input == "AND") {
 					type = 2;
@@ -58,6 +60,7 @@ int main() {
 				else {
 					type = 4;
 				}
+
 				//new Gate(type, delay, new Wire(), new Wire());
 			}
 			else {
