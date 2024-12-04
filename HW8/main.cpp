@@ -49,7 +49,7 @@ int main() {
 			else if (input == "AND" || input == "OR" || input == "XOR") {
 				//create gate and connect the wires and gate
 				int n1, n2, n3;
-				//fs >> delay >> n1 >> n2 >> n3;
+				
 				//new vector<>;
 				if (input == "AND") {
 					type = 2;
@@ -60,7 +60,7 @@ int main() {
 				else {
 					type = 4;
 				}
-
+				//fs >> delay >> n1 >> n2 >> n3;
 				//new Gate(type, delay, new Wire(), new Wire());
 			}
 			else {
