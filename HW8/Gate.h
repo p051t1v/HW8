@@ -1,18 +1,7 @@
 #pragma once
-#include "Wire.cpp"
-#include "Wire.h"
+#include <Wire.cpp>
 #include <vector>
 #include <string>
-
-#define HI 1
-#define LO 0
-#define DNF -1
-#define X = -1;
-
-#define NOT = 1;
-#define AND = 2;
-#define OR = 3;
-#define XOR = 4;
 
 
 using namespace std;

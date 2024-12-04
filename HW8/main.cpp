@@ -2,10 +2,7 @@
 #include <fstream>
 #include <string>
 #include <queue>
-#include "Gate.cpp"
-#include "Wire.h"
-#include "Gate.h"
-#include "Wire.cpp"
+#include <Gate.cpp>
 
 using namespace std;
 
