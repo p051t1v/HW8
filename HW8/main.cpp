@@ -4,7 +4,6 @@
 #include <queue>
 #include "Gate.cpp"
 
-
 using namespace std;
 
 
