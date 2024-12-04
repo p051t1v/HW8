@@ -2,12 +2,10 @@
 #include <iostream>
 
 Wire::Wire(string name,int index){
-	this->name = name;
-	this->index = index;
 }
 
 // Set everything
-void Wire::SetVal(int index, int value) {
+void Wire::SetVal(int value) {
 	this->value = value;
 }
 

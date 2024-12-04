@@ -3,6 +3,7 @@
 #include <string>
 #include <queue>
 #include "Gate.h"
+#include "Wire.h"
 
 using namespace std;
 

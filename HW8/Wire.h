@@ -1,17 +1,17 @@
 
 #include <string>
 #include <vector>
-#include "Gate.h"
+class Gate;
 
-#define HI = 1;
-#define LO = 0;
-#define DNF = -1;
-#define X = -1;
+#define HI  1
+#define LO  0
+#define DNF -1
+#define X -1
 
-#define NOT = 1;
-#define AND = 2;
-#define OR = 3;
-#define XOR = 4;
+#define NOT  1
+#define AND  2
+#define OR  3
+#define XOR  4
 
 using namespace std;
 
@@ -20,7 +20,7 @@ public:
 	Wire(string name, int index);
 
 	//Set everything
-	void SetVal(int index, int value);
+	void SetVal(int value);
 	void SetHist(int value, vector <int>& hist );
 	void AddDrives(Gate* gate);
 	//Get everyting
@@ -33,7 +33,7 @@ public:
 	void printHistory(vector<int> hist) const;
 private:
 	//Variable Defaults
-	int value=DNF;
+	int value = DNF;
 	string name="~";
 	vector<Gate*> drives;
 	int index=0;
