@@ -8,9 +8,9 @@
 #define DNF -1
 #define X = -1;
 
-#define AND = 1;
-#define OR = 2;
-#define NOT = 3;
+#define NOT = 1;
+#define AND = 2;
+#define OR = 3;
 #define XOR = 4;
 
 

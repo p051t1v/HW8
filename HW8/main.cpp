@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <Gate.cpp>
+#include <queue>
 
 using namespace std;
 
@@ -16,8 +17,33 @@ int main() {
 		cin << fileName;
 		fstream fs;
 		fs.open(fileName + ".txt", in);
-		fs.open(fileName + "_v.txt", in);
+		//read file and initialize wire and gate objects
+		string input;
+		char name;
+		int index;
+		fs << input;
+		
+		while (!fs.eof()) {
+			fs << input;
+			if (input == "input") {
+				//create wire
+				fs << name << index;
+				new Wire(name, index);
+			}
+			else if (input == "output") {
+				//create wire
+			}
+			else{
+				//create gate and connect the wires
+			}
+			fs << input;
+		}
 		fs.close();
+		fs.open(fileName + "_v.txt", in);
+		//read vector file and create event vector
+
+		fs.close();
+		queue<queue<int>>;
 	}
 
 
