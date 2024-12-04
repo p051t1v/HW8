@@ -15,6 +15,7 @@ int main() {
 
 		cout << "Type the name of the circuit file you wish to simulate:";
 		cin >> fileName;
+		cout <<"\n" << fileName<<endl;
 		
 		fs.open(fileName, ios::in);
 		cout <<"\n" << fileName << endl;
