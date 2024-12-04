@@ -42,10 +42,11 @@ int main() {
 				//create wire
 			}
 			else if (input == "AND" || input == "OR" || input == "XOR") {
-				//create gate and connect the wires
+				//create gate and connect the wires and gate
+
 			}
 			else {
-				//input == NOT
+				//input == NOT, create and conect wires and gate
 			}
 			fs >> input;
 		}
@@ -55,7 +56,9 @@ int main() {
 			cout << "Error: circuit file found but vector file missing. Exiting program.";
 			return 1;
 		}
-		//read vector file and create event vector
+		//read vector file and put events into event object
+
+		
 
 		fs.close();
 		queue<queue<int>> eventQueue;
