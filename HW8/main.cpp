@@ -56,8 +56,16 @@ int main() {
 			cout << "Error: circuit file found but vector file missing. Exiting program.";
 			return 1;
 		}
-		//read vector file and put events into event object
 
+		//1)
+		//Read vector file and put events into event object
+		//
+		//2)
+		//Cycle through event object and add events to history in wire objects
+		//
+		//3)
+		//Print the wire information using history in wire objects
+		//
 		
 
 		fs.close();
