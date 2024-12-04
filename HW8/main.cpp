@@ -13,7 +13,7 @@ int main() {
 	fstream fs;
 	string fileName;
 
-		cout << "Type the name of the circuit file you wish to simulate:";
+		cout << "Paste the path of the circuit file you wish to simulate: (take the quotation marks off please) :)";
 		cin >> fileName;
 		cout <<"\n" << fileName<<endl;
 		
