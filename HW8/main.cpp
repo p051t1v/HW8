@@ -41,8 +41,11 @@ int main() {
 			else if (input == "output") {
 				//create wire
 			}
-			else{
+			else if (input == "AND" || input == "OR" || input == "XOR") {
 				//create gate and connect the wires
+			}
+			else {
+				//input == NOT
 			}
 			fs >> input;
 		}
