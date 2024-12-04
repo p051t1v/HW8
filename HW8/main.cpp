@@ -29,18 +29,23 @@ int main() {
 		string name;
 		int index;
 		fs >> input;
-		vector<Wire> wires;
+		vector<Wire*> wires;
+		int i = 0;
 		while (!fs.eof()) {
+
 			if (input == "input") {
 				//create wire
 				fs >> name >> index;
-				new Wire(name, index);
+				wires.push_back(new Wire(name, index));
 			}
 			else if (input == "output") {
 				//create wire
 			}
-			else{
+			else if (input == "AND" || input == "OR" || input == "XOR") {
 				//create gate and connect the wires
+			}
+			else {
+				//input == NOT
 			}
 			fs >> input;
 		}
