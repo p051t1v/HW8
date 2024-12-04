@@ -26,7 +26,7 @@ int main() {
 		}
 		//read file and initialize wire and gate objects
 		string input;
-		char name;
+		string name;
 		int index;
 		fs >> input;
 		vector<Wire> wires;
