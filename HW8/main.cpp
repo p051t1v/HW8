@@ -3,6 +3,9 @@
 #include <string>
 #include <queue>
 #include "Gate.cpp"
+#include "Wire.h"
+#include "Gate.h"
+#include "Wire.cpp"
 
 using namespace std;
 
