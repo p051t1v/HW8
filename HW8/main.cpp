@@ -10,21 +10,24 @@ using namespace std;
 
 int main() {
 	string select;
-	cout << "Would you like to make a circuit or use a file?" << endl;
-	cout << "Use 'F' for file and 'N' for new.";
-	cin >> select;
+	fstream fs;
 	string fileName;
-	if (select == "F") {
+
 		cout << "Type the name of the circuit file you wish to simulate:";
-		
 		cin >> fileName;
-		fstream fs;
-		fs.open(fileName + ".txt", ios::in);
+		cout <<"\n" << fileName<<endl;
+		
+		fs.open(fileName, ios::in);
+		cout <<"\n" << fileName << endl;
 		while (!fs.is_open()) {
 			cout << "Error: invalid file name. Try again: ";
 			cin >> fileName;
 			fs.open(fileName + ".txt", ios::in);
 		}
+	//else if(select=="N") {
+		//cout << "type your output like this: \n  CIRCUIT curcuit name here \n ";
+
+	//}
 		//read file and initialize wire and gate objects
 		string input;
 		vector<int> numInputs;
@@ -89,9 +92,11 @@ int main() {
 
 		fs.close();
 		queue<queue<int>> eventQueue;
-	}
+	
+		return 0;
+}
 
 
 	
-	return 0;
-}
+	
+
