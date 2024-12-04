@@ -63,7 +63,8 @@ int main() {
 				else {
 					type = 4;
 				}
-				//fs >> delay >> n1 >> n2 >> n3;
+				fs >> delay >> n1 >> n2 >> n3;
+				in
 				//new Gate(type, delay, new Wire(), new Wire());
 			}
 			else {
