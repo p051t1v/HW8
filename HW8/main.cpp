@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <queue>
-#include "Gate.cpp"
+#include "Gate.h"
 
 using namespace std;
 
@@ -12,9 +12,10 @@ int main() {
 	cout << "Would you like to make a circuit or use a file?" << endl;
 	cout << "Use 'F' for file and 'N' for new.";
 	cin >> select;
+	string fileName;
 	if (select == "F") {
 		cout << "Type the name of the circuit file you wish to simulate:";
-		string fileName;
+		
 		cin >> fileName;
 		fstream fs;
 		fs.open(fileName + ".txt", ios::in);

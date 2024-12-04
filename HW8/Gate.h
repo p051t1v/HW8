@@ -14,6 +14,7 @@ class Gate {
 	int getDelay(int delay) const;
 	Wire* getInput(int input) const;
 	Wire* getOutput() const;
+	int getType();
 	//Evaluate the gate
 	int evaluate() const;
 

@@ -1,5 +1,5 @@
 #include "Gate.h"
-#include "Wire.cpp"
+#include "Wire.h"
 
 //default constructor
 Gate::Gate(int type, int delay, vector<Wire*> output) {
@@ -21,17 +21,23 @@ Wire* Gate::getOutput() const
 	return output;
 }
 
+int Gate::getType()
+{
+
+	return type;
+}
+
 //Evaluate function
 int Gate::evaluate() const{
 	
-	if(inputs.at(0)->0value == X || inputs.at(1)->value == X){
+	if(inputs.at(0) == X || inputs.at(1) == X){
 		return X;
 	}
 	else if (type == AND) {
-		if (inputs.at(0)->value == 1 && inputs.at(1)->value == 1) {
+		if (inputs.at(0) == HI && inputs.at(1) == HI) {
 			return HI;
 		}
-		else if(inputs.at(0)==0||inputs.at(1)==0){
+		else if(inputs.at(0) == LO||inputs.at(1) == LO){
 			return LO;
 		}
 		else {
@@ -39,10 +45,10 @@ int Gate::evaluate() const{
 		}
 	}
 	else if (type == OR) {
-		if (inputs.at(0)->value == HI || inputs.at(1)->value == HI) {
+		if (inputs.at(0)->getValue() == HI || inputs.at(1)->getValue() == HI) {
 			return HI;
 		}
-		else if(inputs.at(0)->value == LO && inputs.at(1)->value == LO){
+		else if(inputs.at(0) == LO && inputs.at(1) == LO){
 			return LO;
 		}
 		else {
@@ -50,10 +56,10 @@ int Gate::evaluate() const{
 		}
 	}
 	else if (type == XOR) {
-		if (input.at(0) == X || input.at(1) == X) {
+		if (inputs.at(0)->getValue() == X || inputs.at(1)->getValue() == X) {
 			return X;
 		}
-		else if (input.at(0) != input.at(1)) {
+		else if (inputs.at(0) != inputs.at(1)) {
 			return HI;
 		}
 		else {
@@ -61,7 +67,7 @@ int Gate::evaluate() const{
 		}
 	}
 	else if (type == NOT) {
-		if(inputs.at(0)==HI)
+		if(inputs.at(0)->getValue() == HI)
 		return LO;
 		else if (inputs.at(0) == LO) {
 		return HI;
