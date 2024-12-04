@@ -1,6 +1,7 @@
 
 #include <string>
 #include <vector>
+#include "Gate.h"
 
 #define HI 1
 #define LO 0

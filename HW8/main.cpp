@@ -21,7 +21,7 @@ int main() {
 		fs.open(fileName + ".txt", ios::in);
 		while (!fs.is_open()) {
 			cout << "Error: invalid file name. Try again: ";
-			cin >> filename;
+			cin >> fileName;
 			fs.open(fileName + ".txt", ios::in);
 		}
 		//read file and initialize wire and gate objects

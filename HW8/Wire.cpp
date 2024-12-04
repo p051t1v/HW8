@@ -1,4 +1,5 @@
 #include "Wire.h"
+#include <iostream>
 
 Wire::Wire(string name,int index){
 	this->name = name;

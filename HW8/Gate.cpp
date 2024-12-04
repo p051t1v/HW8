@@ -2,7 +2,7 @@
 #include "Wire.h"
 
 //default constructor
-Gate::Gate(int type, int delay, vector<Wire*> output) {
+Gate::Gate(int type, int delay,  vector<Wire*> inputs, Wire* output) {
 }
 
 //get everything
@@ -23,7 +23,6 @@ Wire* Gate::getOutput() const
 
 int Gate::getType()
 {
-
 	return type;
 }
 
@@ -68,9 +67,9 @@ int Gate::evaluate() const{
 	}
 	else if (type == NOT) {
 		if(inputs.at(0)->getValue() == HI)
-		return LO;
+			return LO;
 		else if (inputs.at(0) == LO) {
-		return HI;
+			return HI;
 		}
 		else {
 			return X;
