@@ -28,7 +28,7 @@ int main() {
 		char name;
 		int index;
 		fs >> input;
-		
+		vector<Wire> wires;
 		while (!fs.eof()) {
 			if (input == "input") {
 				//create wire
