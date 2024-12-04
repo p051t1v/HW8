@@ -14,7 +14,6 @@ int main() {
 	cin >> select;
 	if (select == "F") {
 		cout << "Type the name of the circuit file you wish to simulate:";
-		string fileName;
 		cin >> fileName;
 		fstream fs;
 		fs.open(fileName + ".txt", ios::in);
@@ -25,7 +24,7 @@ int main() {
 		}
 		//read file and initialize wire and gate objects
 		string input;
-		char name;
+		string name;
 		int index;
 		fs >> input;
 		vector<Wire> wires;
