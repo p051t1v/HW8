@@ -1,4 +1,4 @@
-#include <Wire.h>
+#include "Wire.h"
 
 Wire::Wire(string name,int index){
 	this->name = name;
