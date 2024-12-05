@@ -84,6 +84,11 @@ int main() {
 						output = wires.at(i);
 					}
 				}
+				//In case of missing wire
+				if (output == nullptr){
+				output = new Wire("", n3);
+				}
+				
 				tempGate = new Gate(type, stoi(delay), inputs, output);
 				for (int i = 0; i < inputs.size(); i++) {
 					inputs.at(i)->AddDrives(tempGate);
