@@ -117,7 +117,7 @@ int main() {
 		}
 		struct {
 			int time;
-			int value
+			int value;
 			Wire* w;
 		} circiutEvent;
 		//1)
