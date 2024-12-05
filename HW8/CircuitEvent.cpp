@@ -5,6 +5,10 @@
 CircuitEvent::CircuitEvent(int time, int value, Wire* w)
 : time(time),value(value),w(w){}
 
+CircuitEvent::CircuitEvent()
+{
+}
+
 //Setters
 void CircuitEvent::setTime(int time){
 	this->time = time;
@@ -46,6 +50,11 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 }
 
 vector<CircuitEvent> CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	
+		
+}
+
+CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
+{
+
 }
 

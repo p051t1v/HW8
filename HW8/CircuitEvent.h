@@ -8,13 +8,14 @@ using namespace std;
 class CircuitEvent {
 public:
 	CircuitEvent(int time, int value, Wire* w);
+	CircuitEvent();
 
 	// add the time to other events and then place it in that order
 	void AddEvent(int time, int value, Wire* w);
 
 	vector<CircuitEvent> SortEvents(vector<CircuitEvent>);
 
-	CircuitEvent GetNextEvent(vector<CircuitEvent> );
+	CircuitEvent GetNextEvent(vector<CircuitEvent> NE);
 
 	//Setters
 
