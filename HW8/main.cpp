@@ -162,7 +162,7 @@ int main() {
 
 		//2)
 		//Cycle through event object and add events to history in wire objects
-		CircuitEvent tempEvent;
+		CircuitEvent tempEvent = (events.GetCE()).at(0);
 		for (int t = 0; t <= 70 && !(events.IsEmpty(tempEvent)); t++) {
 			
 			//
@@ -177,7 +177,7 @@ int main() {
 				wires.at(i)->SetHist(wires.at(i)->getValue());
 			}
 			 
-			//events.NextEvent(Sorted vector of events here);
+			tempEvent.GetNextEvent(events.GetCE());
 			
 		}
 
