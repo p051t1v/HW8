@@ -49,9 +49,7 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 	CE.push_back(CircuitEvent(time, value, w));
 }
 
-vector<CircuitEvent> CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-		
-}
+
 void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
 	vector<CircuitEvent> tempEvents;
 	for (int i = 0; i <= EZ.size(); i++) {
