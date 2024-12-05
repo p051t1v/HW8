@@ -6,6 +6,7 @@ class Wire;
 using namespace std;
 
 class Gate {
+public:
 	//Default constructor
 	Gate(int type, int delay, vector<Wire*> inputs, Wire* output);
 

@@ -32,13 +32,15 @@ int main() {
 		string input;
 		vector<int> numInputs;
 		vector<Wire*> inputs;
-		Wire* output;
+		Wire* output = nullptr;
 		string name;
 		string delay;
-		string type;
+		
+		int type;
 		int index;
 		fs >> input;
 		vector<Wire*> wires;
+		vector<Gate*> gates;
 		int i = 0;
 		while (!fs.eof()) {
 
@@ -67,6 +69,9 @@ int main() {
 					type = 4;
 				}
 				fs >> delay >> n1 >> n2 >> n3;
+
+				delay.erase(delay.size() - 2);
+
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getIndex() == n1 || wires.at(i)->getIndex() == n2) {
 						inputs.push_back(wires.at(i));
@@ -77,13 +82,27 @@ int main() {
 						output = wires.at(i);
 					}
 				}
-				//new Gate(type, delay, new Wire(), new Wire());
+				gates.push_back(new Gate(type, stoi(delay), inputs, output));
 				inputs.clear();
 				output = nullptr;
 			}
-			else {
-				
+			else if (input == "NOT") {
 				//input == NOT, create and conect wires and gate
+				int n1, n2;
+				fs >> delay >> n1 >> n2;
+				for (int i = 0; i < wires.size(); i++) {
+					if (wires.at(i)->getIndex() == n1) {
+						inputs.push_back(wires.at(i));
+					}
+				}
+				for (int i = 0; i < wires.size(); i++) {
+					if (wires.at(i)->getIndex() == n2) {
+						output = wires.at(i);
+					}
+				}
+				//new Gate(type, delay, new Wire(), new Wire());
+				inputs.clear();
+				output = nullptr;
 			}
 			fs >> input;
 		}
