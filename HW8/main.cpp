@@ -37,7 +37,7 @@ int main() {
 		string name;
 		string delay;
 		
-		int type;
+		int type = 0;
 		int index;
 		fs >> input;
 		vector<Wire*> wires;
@@ -164,17 +164,18 @@ int main() {
 		//Cycle through event object and add events to history in wire objects
 		
 		for (int t = 0; t <= 60 /*&& !events.empty()*/; t++) {
+			
 			//
-			//
-			//
-			//
+			
+
+
 			//
 			//
 			//
 			// do history
-			 for (int h; h <= wires.size(); h++){
-				 wires.at(i)->SetHist(wires.at(i)->getValue());
-			 }
+			for (int h = 0; h <= wires.size(); h++){
+				wires.at(i)->SetHist(wires.at(i)->getValue());
+			}
 			// 
 			//events.NextEvent();
 			

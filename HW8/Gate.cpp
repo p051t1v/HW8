@@ -100,7 +100,6 @@ void Gate::evaluate() const
 			output->SetVal(X);
 		}
 	}
-	output->SetHist(output->getValue(),output->hist);
 
 	return;
 }
