@@ -42,6 +42,7 @@ private:
 	string name="~";
 	vector<Gate*> drives;
 	int index = 0;
+
 	
 	
 };
