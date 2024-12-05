@@ -1,8 +1,8 @@
 #include "Wire.h"
 #include <iostream>
 
-Wire::Wire(string name,int index){
-}
+Wire::Wire(string name,int index)
+	:name(name),index(index){}
 
 // Set everything
 void Wire::SetVal(int value) {

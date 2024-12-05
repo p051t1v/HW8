@@ -36,6 +36,6 @@ private:
 	int value = DNF;
 	string name="~";
 	vector<Gate*> drives;
-	int index=0;
+	int index = 0;
 	vector<int> history;
 };

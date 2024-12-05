@@ -82,8 +82,18 @@ int main() {
 		fileName.erase(fileName.size()-4);
 		fs.open(fileName + "_v.txt", ios::in);
 		while (!fs.is_open()) {
-			cout << "Error: circuit file found but vector file missing. Exiting program.";
-			return 1;
+			char ans;
+			cout << "Error: circuit file found but vector file missing. Does it have a different pathway? \n (Y/N)"<<endl;
+			cin >> ans;
+			if (ans == 'Y') {
+				cout << "do the exact same thing you did to the other file.Put it in here without the quotations or file type"<<endl;
+				cin >> fileName;
+				fs.open(fileName + "_v.txt", ios::in);
+			}
+			else {
+				cout << "I'm sorry, I cannot help you.";
+			}
+			
 		}
 
 		//1)
