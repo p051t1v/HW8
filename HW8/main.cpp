@@ -130,6 +130,7 @@ int main() {
 			}
 			else {
 				cout << "I'm sorry, I cannot help you.";
+				return 1;
 			}
 			
 		}
