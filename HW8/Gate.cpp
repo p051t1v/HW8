@@ -8,7 +8,7 @@
 Gate::Gate(int type, int delay, vector<Wire*> inputs, Wire* output)
    :type(type), delay(delay), inputs(inputs), output(output) {}
 
-//set everything
+
 
 
 //get everything
@@ -39,6 +39,7 @@ void Gate::evaluate() const
 	if((inputs.at(0)->getValue() == X) && (inputs.at(0)->getValue() == X))
 	{
 		output->SetVal(HI);
+
 	}
 	else if (type == AND)
 	{
@@ -99,5 +100,7 @@ void Gate::evaluate() const
 			output->SetVal(X);
 		}
 	}
+	output->SetHist(output->getValue(),output->hist);
+
 	return;
 }

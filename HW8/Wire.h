@@ -33,6 +33,8 @@ public:
 	vector<Gate*> getDrives();
 	//Print UI
 	void printHistory(vector<int> hist) const;
+	//Public Vector
+	vector<int>& hist;
 private:
 	//Variable Defaults
 
@@ -40,6 +42,6 @@ private:
 	string name="~";
 	vector<Gate*> drives;
 	int index = 0;
-	vector<int>& hist;
+	
 	
 };
