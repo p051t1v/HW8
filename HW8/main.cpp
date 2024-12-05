@@ -171,13 +171,13 @@ int main() {
 			for (int h = 0; h <= wires.size(); h++){
 				wires.at(i)->SetHist(wires.at(i)->getValue());
 			}
-			// 
-			//events.NextEvent();
+			 
+			//events.NextEvent(Sorted vector of events here);
 			
 		}
 
 		//
-		//3)
+		
 		for (int i = 0; i <= wires.size();i++) {
 			wires.at(i)->printHistory(wires.at(i)->hist);
 		}
