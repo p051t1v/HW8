@@ -14,7 +14,7 @@ public:
 	void AddEvent(int time, int value, Wire* w);
 
 	//should sort the vector to have the highest time at the back
-	void SortEvents(vector<CircuitEvent> EZ);
+	void SortEvents(vector<CircuitEvent>& EZ);
 
 	CircuitEvent GetNextEvent(vector<CircuitEvent> NE);
 

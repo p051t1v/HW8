@@ -51,11 +51,10 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 }
 
 
-void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	std::sort(EZ.begin(), EZ.end(), [](CircuitEvent& a, CircuitEvent& b) {
+void CircuitEvent::SortEvents(vector<CircuitEvent>& EZ) {
+	sort(EZ.begin(), EZ.end(), [](const CircuitEvent& a, const CircuitEvent& b) {
 		return a.time < b.time;
-	}
-);
+		});
 }
 
 CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
