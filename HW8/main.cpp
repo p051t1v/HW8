@@ -32,6 +32,7 @@ int main() {
 		string input;
 		vector<int> numInputs;
 		vector<Wire*> inputs;
+		Wire* output;
 		string name;
 		string delay;
 		string type;
@@ -48,6 +49,8 @@ int main() {
 			}
 			else if (input == "OUTPUT") {
 				//create wire
+				fs >> name >> index;
+				wires.push_back(new Wire(name, index));
 			}
 			else if (input == "AND" || input == "OR" || input == "XOR") {
 				//create gate and connect the wires and gate
@@ -64,13 +67,19 @@ int main() {
 					type = 4;
 				}
 				fs >> delay >> n1 >> n2 >> n3;
-				for (int i = 0; i < inputs.size() || i < 70; i++) {
-					if (wires.at(i)->getValue() == n1 || wires.at(i)->getValue() == n2) {
+				for (int i = 0; i < wires.size(); i++) {
+					if (wires.at(i)->getIndex() == n1 || wires.at(i)->getIndex() == n2) {
 						inputs.push_back(wires.at(i));
 					}
 				}
+				for (int i = 0; i < wires.size(); i++) {
+					if (wires.at(i)->getIndex() == n3) {
+						output = wires.at(i);
+					}
+				}
 				//new Gate(type, delay, new Wire(), new Wire());
-
+				inputs.clear();
+				output = nullptr;
 			}
 			else {
 				
