@@ -4,6 +4,9 @@
 Wire::Wire(string name, int index, vector<int>& hist)
 	:name(name),index(index), hist(hist){}
 
+Wire::Wire(string name, int index)
+	:name(name),index(index),hist(hist){}
+
 // Set everything
 void Wire::SetVal(int value) {
 	this->value = value;

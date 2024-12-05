@@ -19,6 +19,7 @@ class Wire {
 public:
 	//default constructor
 	Wire(string name, int index, vector <int> & hist);
+	Wire(string name, int index);
 
 	//Set everything
 	void SetVal(int value);
