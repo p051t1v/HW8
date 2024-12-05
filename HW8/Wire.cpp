@@ -54,6 +54,8 @@ int Wire::getValue()
 // Print Function
 void Wire::printHistory(vector<int> hist) const
 {
+	cout << name <<" |";
+
 	for (int i:hist)
 	{
 		if (i == LO)
