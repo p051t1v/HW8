@@ -13,7 +13,9 @@ int main() {
 	fstream fs;
 	string fileName;
 
-		cout << "Paste the path of the circuit file you wish to simulate: (take the quotation marks off please) :)";
+	cout << "Paste the path of the circuit file you wish to simulate: (take the quotation marks off and have the files in the same";
+		cout<<" directory. Also, take the txt off and make sure one both files have the same name with the only difference being the";
+		cout << "vector file having the ending _v.txt. Thank you!) :)";
 		cin >> fileName;
 		cout <<"\n" << fileName<<endl;
 		
@@ -24,11 +26,8 @@ int main() {
 			cin >> fileName;
 			fs.open(fileName + ".txt", ios::in);
 		}
-	//else if(select=="N") {
-		//cout << "type your output like this: \n  CIRCUIT curcuit name here \n ";
 
-	//}
-		//read file and initialize wire and gate objects
+
 		string input;
 		vector<int> numInputs;
 		vector<Wire*> inputs;
@@ -90,7 +89,7 @@ int main() {
 		//Print the wire information using history in wire objects
 		//
 		
-
+		
 		fs.close();
 		queue<queue<int>> eventQueue;
 	
