@@ -17,7 +17,8 @@ using namespace std;
 
 class Wire {
 public:
-	Wire(string name, int index);
+	//default constructor
+	Wire(string name, int index, vector <int> & hist);
 
 	//Set everything
 	void SetVal(int value);
@@ -33,9 +34,11 @@ public:
 	void printHistory(vector<int> hist) const;
 private:
 	//Variable Defaults
+
 	int value = DNF;
 	string name="~";
 	vector<Gate*> drives;
 	int index = 0;
-	vector<int> history;
+	vector<int>& hist;
+	
 };

@@ -1,8 +1,8 @@
 #include "Wire.h"
 #include <iostream>
 
-Wire::Wire(string name,int index)
-	:name(name),index(index){}
+Wire::Wire(string name, int index, vector<int>& hist)
+	:name(name),index(index), hist(hist){}
 
 // Set everything
 void Wire::SetVal(int value) {
@@ -24,7 +24,8 @@ void Wire::AddDrives(Gate* gate)
 // Get Everything
 vector<int> Wire::getHistory()
 {
-	return history;
+	
+	return hist;
 }
 
 vector<Gate*> Wire::getDrives()

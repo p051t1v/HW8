@@ -1,5 +1,7 @@
 #include "Gate.h"
 #include "Wire.h"
+#include <iostream>
+
 
 
 //default constructor
@@ -36,7 +38,7 @@ void Gate::evaluate() const
 	
 	if((inputs.at(0)->getValue() == X) && (inputs.at(0)->getValue() == X))
 	{
-		output->SetVal(X);
+		output->SetVal(HI);
 	}
 	else if (type == AND)
 	{
