@@ -178,7 +178,10 @@ int main() {
 
 		//
 		//3)
-		//Print the wire information using history in wire objects
+		for (int i = 0; i <= wires.size();i++) {
+			wires.at(i)->printHistory(wires.at(i)->hist);
+		}
+		
 		//
 		
 		

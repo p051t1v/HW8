@@ -1,13 +1,14 @@
 #include "CircuitEvent.h"
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <stdexcept>
 
 CircuitEvent::CircuitEvent(int time, int value, Wire* w)
 : time(time),value(value),w(w){}
 
-CircuitEvent::CircuitEvent()
-{
-}
+CircuitEvent::CircuitEvent():
+ time(0), value(0), w(nullptr){}
 
 //Setters
 void CircuitEvent::setTime(int time){
@@ -51,21 +52,30 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 
 
 void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	vector<CircuitEvent> tempEvents;
-	for (int i = 0; i <= EZ.size(); i++) {
-		if (i + 1 == tempEvents.size()) {
-			tempEvents.push_back(EZ.at(i));
-		}
-		for (int j = 0; j <= tempEvents.size(); j++) {
-			if (!(EZ.at(i).GetTime() <= 1)) {
-
-			}
-		}
+	std::sort(EZ.begin(), EZ.end(), [](CircuitEvent a, CircuitEvent& b) {
+		return a.time < b.GetTime();
 	}
+);
 }
 
 CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 {
+	auto it = std::find(NE.begin(), NE.end(), *this);
+	if (it == NE.end()) {
+		throw std::runtime_error("current event not found in the vector");
+	}
+
+
+	if (it + 1 != NE.end()) {
+		return *(it + 1);
+	}
+	else {
+		cout << "done reading the vector or no object" << endl;
+		return CircuitEvent();
+	}
 
 }
-
+//equality operator
+bool CircuitEvent::operator==(const CircuitEvent& other) const {
+	return this->time == other.time;
+}
