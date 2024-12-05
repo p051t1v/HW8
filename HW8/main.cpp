@@ -148,7 +148,7 @@ int main() {
 		while (!fs.eof()) {
 			if (input == "INPUT") {
 				fs >> name >> time >> value;
-				Wire* tempWire;
+				Wire* tempWire = nullptr;
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getName() == name) {
 						tempWire = wires.at(i);
