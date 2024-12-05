@@ -95,7 +95,6 @@ int main() {
 				//input == NOT, create and conect wires and gate
 				int n1, n2;
 				fs >> delay >> n1 >> n2;
-				delay.erase(delay.size() - 2);
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getIndex() == n1) {
 						inputs.push_back(wires.at(i));
@@ -106,10 +105,7 @@ int main() {
 						output = wires.at(i);
 					}
 				}
-				tempGate = new Gate(type, stoi(delay), inputs, output);
-				for (int i = 0; i < inputs.size(); i++) {
-					inputs.at(i)->AddDrives(tempGate);
-				}
+				//new Gate(type, delay, new Wire(), new Wire());
 				inputs.clear();
 				output = nullptr;
 			}
