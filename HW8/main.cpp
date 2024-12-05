@@ -41,6 +41,7 @@ int main() {
 		fs >> input;
 		vector<Wire*> wires;
 		vector<Gate*> gates;
+		Gate* tempGate;
 		int i = 0;
 		while (!fs.eof()) {
 
@@ -82,7 +83,11 @@ int main() {
 						output = wires.at(i);
 					}
 				}
-				gates.push_back(new Gate(type, stoi(delay), inputs, output));
+				tempGate = new Gate(type, stoi(delay), inputs, output);
+				for (int i = 0; i < inputs.size(); i++) {
+					inputs.at(i)->AddDrives(tempGate);
+				}
+
 				inputs.clear();
 				output = nullptr;
 			}
@@ -90,6 +95,7 @@ int main() {
 				//input == NOT, create and conect wires and gate
 				int n1, n2;
 				fs >> delay >> n1 >> n2;
+				delay.erase(delay.size() - 2);
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getIndex() == n1) {
 						inputs.push_back(wires.at(i));
@@ -100,7 +106,10 @@ int main() {
 						output = wires.at(i);
 					}
 				}
-				//new Gate(type, delay, new Wire(), new Wire());
+				tempGate = new Gate(type, stoi(delay), inputs, output);
+				for (int i = 0; i < inputs.size(); i++) {
+					inputs.at(i)->AddDrives(tempGate);
+				}
 				inputs.clear();
 				output = nullptr;
 			}
@@ -121,6 +130,7 @@ int main() {
 			}
 			else {
 				cout << "I'm sorry, I cannot help you.";
+				return 1;
 			}
 			
 		}
