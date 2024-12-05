@@ -14,7 +14,7 @@ int main() {
 	fstream fs;
 	string fileName;
 
-	cout << "Paste the path of the circuit file you wish to simulate: (take the quotation marks off and have the files in the same";
+	cout << "Paste the path of the circuit file you wish to simulate (take the quotation marks off and have the files in the same";
 		cout<<" directory. Also, take the txt off and make sure one both files have the same name with the only difference being the";
 		cout << "vector file having the ending _v.txt. Thank you!) :)";
 		cin >> fileName;
