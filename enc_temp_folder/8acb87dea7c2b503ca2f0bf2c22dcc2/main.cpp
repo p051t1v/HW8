@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <queue>
-
 #include "Gate.h"
 #include "Wire.h"
 
@@ -41,12 +40,12 @@ int main() {
 		int i = 0;
 		while (!fs.eof()) {
 
-			if (input == "INPUT") {
+			if (input == "input") {
 				//create wire
 				fs >> name >> index;
 				wires.push_back(new Wire(name, index));
 			}
-			else if (input == "OUTPUT") {
+			else if (input == "output") {
 				//create wire
 			}
 			else if (input == "AND" || input == "OR" || input == "XOR") {
@@ -64,9 +63,8 @@ int main() {
 					type = 4;
 				}
 				fs >> delay >> n1 >> n2 >> n3;
-				for (int i = 0; i < inputs.size() || i < 70; i++) {
-					if (wires.at(i)->getValue() == n1 || wires.at(i)->getValue() == n2) {
-						inputs.push_back(wires.at(i));
+				for (int i = 0; i != 99; i++) {
+					if (inputs.at(i)->getIndex() == n1 || inputs.at(i)->getIndex() == n1) {
 					}
 				}
 				//new Gate(type, delay, new Wire(), new Wire());
