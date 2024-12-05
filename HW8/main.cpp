@@ -158,7 +158,7 @@ int main() {
 		//2)
 		//Cycle through event object and add events to history in wire objects
 		
-		for (int t = 0; t <= 60 /*&& !events.empty()*/; t++) {
+		for (int t = 0; t <= 70 /*&& !events.empty()*/; t++) {
 			
 			//
 			
