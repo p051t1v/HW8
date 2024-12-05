@@ -26,7 +26,7 @@ int main() {
 		while (!fs.is_open()) {
 			cout << "Error: invalid file name. Try again: ";
 			cin >> fileName;
-			fs.open(fileName, ios::in);
+			fs.open(fileName + ".txt", ios::in);
 		}
 
 
