@@ -64,8 +64,12 @@ int main() {
 					type = 4;
 				}
 				fs >> delay >> n1 >> n2 >> n3;
-				
+				for (bool found = false, int i = 0; found != true; i++) {
+					if (inputs.at(i)->getIndex() == n1 || inputs.at(i)->getIndex() == n1) {
+					};
+				}
 				//new Gate(type, delay, new Wire(), new Wire());
+
 			}
 			else {
 				
@@ -73,7 +77,9 @@ int main() {
 			}
 			fs >> input;
 		}
+
 		fs.close();
+		fileName.erase(fileName.size()-4);
 		fs.open(fileName + "_v.txt", ios::in);
 		while (!fs.is_open()) {
 			cout << "Error: circuit file found but vector file missing. Exiting program.";
