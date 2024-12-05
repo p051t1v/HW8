@@ -144,7 +144,7 @@ int main() {
 
 		fs >> input;
 		int time, value;
-		//CircuitEvent events;
+		CircuitEvent events;
 		while (!fs.eof()) {
 			if (input == "INPUT") {
 				fs >> name >> time >> value;
@@ -154,7 +154,7 @@ int main() {
 						tempWire = wires.at(i);
 					}
 				}
-				//events.AddEvent(time, value, tempWire);
+				events.AddEvent(time, value, tempWire);
 			}
 			fs >> input;
 		}
@@ -162,8 +162,8 @@ int main() {
 
 		//2)
 		//Cycle through event object and add events to history in wire objects
-		
-		for (int t = 0; t <= 70 /*&& !events.empty()*/; t++) {
+		CircuitEvent tempEvent;
+		for (int t = 0; t <= 70 && !(events.IsEmpty(tempEvent)); t++) {
 			
 			//
 			

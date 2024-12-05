@@ -42,13 +42,19 @@ Wire* CircuitEvent::getWire()
 	return w;
 }
 
-
-
-
-
-void CircuitEvent::AddEvent(int time, int value, Wire* w){
-	CE.push_back(CircuitEvent(time, value, w));
+vector<CircuitEvent> CircuitEvent::GetCE()
+{
+	return CE;
 }
+
+bool CircuitEvent::IsEmpty(CircuitEvent& e)
+{
+	if (e == *CE.end()) {
+		return true;
+	}
+	return false;
+}
+
 
 
 void CircuitEvent::SortEvents(vector<CircuitEvent>& EZ) {
@@ -57,14 +63,22 @@ void CircuitEvent::SortEvents(vector<CircuitEvent>& EZ) {
 		});
 }
 
+void CircuitEvent::AddEvent(int time, int value, Wire* w){
+	CE.push_back(CircuitEvent(time, value, w));
+	(*this).SortEvents(CE);
+}
+
+
+
+
 CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 {
 	if (NE.empty()) {
 		return CircuitEvent();
 	}
-	auto it = std::find(NE.begin(), NE.end(), *this); 
+	auto it = find(NE.begin(), NE.end(), *this); 
 		if (it == NE.end()) {
-		throw std::runtime_error("current event not found in the vector");
+		throw runtime_error("current event not found in the vector");
 	}
 
 		auto nextIt = it + 1;
