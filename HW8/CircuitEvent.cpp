@@ -46,6 +46,6 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 }
 
 void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	
+	for (int i = 0; i <= EZ.size(); i++);
 }
 

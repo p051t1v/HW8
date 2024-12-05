@@ -5,7 +5,7 @@
 
 #include "Gate.h"
 #include "Wire.h"
-#include "CircuitEvent.h"
+//#include "CircuitEvent.h"
 
 using namespace std;
 
@@ -49,7 +49,7 @@ int main() {
 			if (input == "INPUT") {
 				//create wire
 				fs >> name >> index;
-				wires.push_back( new Wire (name, index));
+				wires.push_back(new Wire (name, index));
 			}
 			else if (input == "OUTPUT") {
 				//create wire
@@ -167,7 +167,7 @@ int main() {
 			
 			//
 			
-
+			
 
 			//
 			//
