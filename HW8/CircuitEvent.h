@@ -1,6 +1,6 @@
 #pragma once
-#include "Wire.h"
-#include "Gate.h"
+class Wire;
+class Gate;
 
 using namespace std;
 
@@ -11,7 +11,9 @@ public:
 	// add the time to other events and then place it in that order
 	void AddEvent(int time, int value, Wire* w);
 
-	void SortEvents(vector<CircuitEvent>);
+	vector<CircuitEvent> SortEvents(vector<CircuitEvent>);
+
+	CircuitEvent GetNextEvent(vector<CircuitEvent> );
 
 	//Setters
 
