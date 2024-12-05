@@ -52,22 +52,25 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 
 
 void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	std::sort(EZ.begin(), EZ.end(), [](CircuitEvent a, CircuitEvent& b) {
-		return a.time < b.GetTime();
+	std::sort(EZ.begin(), EZ.end(), [](CircuitEvent& a, CircuitEvent& b) {
+		return a.time < b.time;
 	}
 );
 }
 
 CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 {
-	auto it = std::find(NE.begin(), NE.end(), *this);
-	if (it == NE.end()) {
+	if (NE.empty()) {
+		return CircuitEvent();
+	}
+	auto it = std::find(NE.begin(), NE.end(), *this); 
+		if (it == NE.end()) {
 		throw std::runtime_error("current event not found in the vector");
 	}
 
-
-	if (it + 1 != NE.end()) {
-		return *(it + 1);
+		auto nextIt = it + 1;
+	if (nextIt != NE.end()) {
+		return *(nextIt);
 	}
 	else {
 		cout << "done reading the vector or no object" << endl;

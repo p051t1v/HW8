@@ -5,7 +5,7 @@
 
 #include "Gate.h"
 #include "Wire.h"
-//#include "CircuitEvent.h"
+#include "CircuitEvent.h"
 
 using namespace std;
 
