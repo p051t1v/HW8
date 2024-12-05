@@ -116,7 +116,13 @@ int main() {
 			}
 			fs >> input;
 		}
-
+		struct {
+			int time;
+			int value;
+			Wire* w;
+		} circiutEvent;
+		//1)
+		//Read vector file and put events into event object
 		fs.close();
 		fileName.erase(fileName.size()-4);
 		fs.open(fileName + "_v.txt", ios::in);
@@ -136,18 +142,51 @@ int main() {
 			
 		}
 
-		//1)
-		//Read vector file and put events into event object
-		//
+		fs >> input;
+		int time, value;
+		//CircuitEvent events;
+		while (!fs.eof()) {
+			if (input == "INPUT") {
+				fs >> name >> time >> value;
+				Wire* tempWire;
+				for (int i = 0; i < wires.size(); i++) {
+					if (wires.at(i)->getName() == name) {
+						tempWire = wires.at(i);
+					}
+				}
+				//events.AddEvent(time, value, tempWire);
+			}
+			fs >> input;
+		}
+		fs.close();
+
 		//2)
 		//Cycle through event object and add events to history in wire objects
+		
+		for (int t = 0; t <= 60 /*&& !events.empty()*/; t++) {
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			// do history
+			 for (int h; h <= wires.size(); h++){
+				 wires.at(i)->SetHist(wires.at(i)->getValue());
+			 }
+			// 
+			//events.NextEvent();
+			
+		}
+
 		//
 		//3)
 		//Print the wire information using history in wire objects
 		//
 		
 		
-		fs.close();
+		
 		queue<queue<int>> eventQueue;
 	
 		return 0;
