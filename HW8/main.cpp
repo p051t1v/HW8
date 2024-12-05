@@ -143,7 +143,7 @@ int main() {
 
 		fs >> input;
 		int time, value;
-
+		//CircuitEvent events;
 		while (!fs.eof()) {
 			if (input == "INPUT") {
 				fs >> name >> time >> value;
@@ -153,15 +153,32 @@ int main() {
 						tempWire = wires.at(i);
 					}
 				}
-				//CircuitEvents.AddEvent(time, value, tempWire);
+				//events.AddEvent(time, value, tempWire);
 			}
 			fs >> input;
 		}
-
 		fs.close();
-		//
+
 		//2)
 		//Cycle through event object and add events to history in wire objects
+		
+		for (int t = 0; t <= 60 /*&& !events.empty()*/; t++) {
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			// do history
+			 for (int h; h <= wires.size(); h++){
+				 wires.at(i)->SetHist(wires.at(i)->getValue());
+			 }
+			// 
+			//events.NextEvent();
+			
+		}
+
 		//
 		//3)
 		//Print the wire information using history in wire objects

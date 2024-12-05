@@ -23,7 +23,7 @@ public:
 
 	//Set everything
 	void SetVal(int value);
-	void SetHist(int value, vector <int>& hist );
+	void SetHist(int value);
 	void AddDrives(Gate* gate);
 	//Get everyting
 	int getValue();

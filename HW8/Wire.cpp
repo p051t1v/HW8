@@ -12,7 +12,7 @@ void Wire::SetVal(int value) {
 	this->value = value;
 }
 
-void Wire::SetHist(int value, vector <int>& hist)
+void Wire::SetHist(int value)
 {
 	if (value != NULL)
 	{
