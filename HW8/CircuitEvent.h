@@ -1,6 +1,7 @@
 #pragma once
 class Wire;
 class Gate;
+#include <vector>
 
 using namespace std;
 

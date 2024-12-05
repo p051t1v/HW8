@@ -116,11 +116,6 @@ int main() {
 			}
 			fs >> input;
 		}
-		struct {
-			int time;
-			int value;
-			Wire* w;
-		} circiutEvent;
 		//1)
 		//Read vector file and put events into event object
 		fs.close();
