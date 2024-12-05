@@ -11,7 +11,7 @@ public:
 	// add the time to other events and then place it in that order
 	void AddEvent(int time, int value, Wire* w);
 
-	vector<CircuitEvent> SortEvents(vector<CircuitEvent>);
+	void SortEvents(vector<CircuitEvent> EZ);
 
 	CircuitEvent GetNextEvent(vector<CircuitEvent> );
 
@@ -22,7 +22,7 @@ public:
 	void setWire(Wire* w);
 
 	//Getters
-	int getTime();
+	int GetTime();
 	int getValue();
 	Wire* getWire();
 private:

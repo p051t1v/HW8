@@ -22,7 +22,7 @@ void CircuitEvent::setWire(Wire* w)
 
 
 //Getters
-int CircuitEvent::getTime()
+int CircuitEvent::GetTime()
 {
 	return time;
 }
@@ -46,6 +46,16 @@ void CircuitEvent::AddEvent(int time, int value, Wire* w){
 }
 
 void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	for (int i = 0; i <= EZ.size(); i++);
+	vector<CircuitEvent> tempEvents;
+	for (int i = 0; i <= EZ.size(); i++) {
+		if (i + 1 == tempEvents.size()) {
+			tempEvents.push_back(EZ.at(i));
+		}
+		for (int j = 0; j <= tempEvents.size(); j++) {
+			if (!(EZ.at(i).GetTime() <= 1)) {
+
+			}
+		}
+	}
 }
 
