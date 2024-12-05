@@ -41,6 +41,7 @@ int main() {
 		fs >> input;
 		vector<Wire*> wires;
 		vector<Gate*> gates;
+		Gate* tempGate;
 		int i = 0;
 		while (!fs.eof()) {
 
@@ -82,7 +83,11 @@ int main() {
 						output = wires.at(i);
 					}
 				}
-				gates.push_back(new Gate(type, stoi(delay), inputs, output));
+				tempGate = new Gate(type, stoi(delay), inputs, output);
+				for (int i = 0; i < inputs.size(); i++) {
+					inputs.at(i)->AddDrives(tempGate);
+				}
+
 				inputs.clear();
 				output = nullptr;
 			}
