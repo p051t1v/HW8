@@ -21,6 +21,9 @@
     <ClInclude Include="Gate.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="CircuitEvent.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Wire.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CircuitEvent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
