@@ -10,11 +10,14 @@ public:
 	CircuitEvent(int time, int value, Wire* w);
 	CircuitEvent();
 
+
+	//should sort the vector to have the highest time at the back
+	void SortEvents(vector<CircuitEvent>& EZ);
+
+
 	// add the time to other events and then place it in that order
 	void AddEvent(int time, int value, Wire* w);
 
-	//should sort the vector to have the highest time at the back
-	void SortEvents(vector<CircuitEvent> EZ);
 
 	CircuitEvent GetNextEvent(vector<CircuitEvent> NE);
 
@@ -23,14 +26,16 @@ public:
 
 	//Setters
 
-	void setTime(int time);
-	void setValue(int value);
-	void setWire(Wire* w);
+	void SetTime(int time);
+	void SetValue(int value);
+	void SetWire(Wire* w);
 
 	//Getters
 	int GetTime();
-	int getValue();
-	Wire* getWire();
+	int GetValue();
+	Wire* GetWire();
+	vector<CircuitEvent> GetCE();
+	bool IsEmpty(CircuitEvent& e);
 private:
 	int time;
 	int value;

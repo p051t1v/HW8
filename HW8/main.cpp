@@ -26,7 +26,7 @@ int main() {
 		while (!fs.is_open()) {
 			cout << "Error: invalid file name. Try again: ";
 			cin >> fileName;
-			fs.open(fileName + ".txt", ios::in);
+			fs.open(fileName, ios::in);
 		}
 
 
@@ -43,7 +43,7 @@ int main() {
 		vector<Wire*> wires;
 		vector<Gate*> gates;
 		Gate* tempGate;
-		int i = 0;
+		//int i = 0;
 		while (!fs.eof()) {
 
 			if (input == "INPUT") {
@@ -84,6 +84,11 @@ int main() {
 						output = wires.at(i);
 					}
 				}
+				//In case of missing wire
+				if (output == nullptr){
+				output = new Wire("", n3);
+				}
+				
 				tempGate = new Gate(type, stoi(delay), inputs, output);
 				for (int i = 0; i < inputs.size(); i++) {
 					inputs.at(i)->AddDrives(tempGate);
@@ -139,17 +144,17 @@ int main() {
 
 		fs >> input;
 		int time, value;
-		//CircuitEvent events;
+		CircuitEvent events;
 		while (!fs.eof()) {
 			if (input == "INPUT") {
 				fs >> name >> time >> value;
-				Wire* tempWire;
+				Wire* tempWire = nullptr;
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getName() == name) {
 						tempWire = wires.at(i);
 					}
 				}
-				//events.AddEvent(time, value, tempWire);
+				events.AddEvent(time, value, tempWire);
 			}
 			fs >> input;
 		}
@@ -157,23 +162,30 @@ int main() {
 
 		//2)
 		//Cycle through event object and add events to history in wire objects
-		
-		for (int t = 0; t <= 70 /*&& !events.empty()*/; t++) {
-			
-			//
-			
-			
-
-			//
-			//
-			//
-			// do history
-			for (int h = 0; h <= wires.size(); h++){
-				wires.at(i)->SetHist(wires.at(i)->getValue());
+		CircuitEvent tempEvent = (events.GetCE()).at(0);
+		Wire* tempWire = nullptr;
+		vector<Gate*> tempDrives;
+		int timeElapsed;
+		for (int t = 0; t <= 70 && !(events.IsEmpty(tempEvent)); t++) {
+			while (t == tempEvent.GetTime()) {
+				//1)do event
+				tempWire = tempEvent.GetWire();
+				tempWire->SetVal(tempEvent.GetValue());
+				//2)Get drives wire
+				tempDrives = tempWire->getDrives();
+				//3)create events
+				for (int i = 0; i < tempDrives.size(); i++) {
+					events.AddEvent(t + tempDrives.at(i)->getDelay(), 1, tempDrives.at(i)->getOutput());
+				}
+				//4)find next event
+				tempDrives.clear();
+				tempEvent = tempEvent.GetNextEvent(events.GetCE());
 			}
-			 
-			//events.NextEvent(Sorted vector of events here);
-			
+		
+			for (int h = 0; h <= wires.size(); h++) {
+				wires.at(h)->SetHist(wires.at(h)->getValue());
+			}
+			timeElapsed = t;
 		}
 
 		//

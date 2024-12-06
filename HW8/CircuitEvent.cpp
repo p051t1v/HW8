@@ -11,16 +11,16 @@ CircuitEvent::CircuitEvent():
  time(0), value(0), w(nullptr){}
 
 //Setters
-void CircuitEvent::setTime(int time){
+void CircuitEvent::SetTime(int time){
 	this->time = time;
 }
 
-void CircuitEvent::setValue(int value)
+void CircuitEvent::SetValue(int value)
 {
 	this->value = value;
 }
 
-void CircuitEvent::setWire(Wire* w)
+void CircuitEvent::SetWire(Wire* w)
 {
 	this->w = w;
 }
@@ -32,40 +32,53 @@ int CircuitEvent::GetTime()
 	return time;
 }
 
-int CircuitEvent::getValue()
+int CircuitEvent::GetValue()
 {
 	return value;
 }
 
-Wire* CircuitEvent::getWire()
+Wire* CircuitEvent::GetWire()
 {
 	return w;
 }
 
+vector<CircuitEvent> CircuitEvent::GetCE()
+{
+	return CE;
+}
+
+bool CircuitEvent::IsEmpty(CircuitEvent& e)
+{
+	if (e == *CE.end()) {
+		return true;
+	}
+	return false;
+}
 
 
 
+void CircuitEvent::SortEvents(vector<CircuitEvent>& EZ) {
+	sort(EZ.begin(), EZ.end(), [](const CircuitEvent& a, const CircuitEvent& b) {
+		return a.time < b.time;
+		});
+}
 
 void CircuitEvent::AddEvent(int time, int value, Wire* w){
 	CE.push_back(CircuitEvent(time, value, w));
+	(*this).SortEvents(CE);
 }
 
 
-void CircuitEvent::SortEvents(vector<CircuitEvent> EZ){
-	std::sort(EZ.begin(), EZ.end(), [](CircuitEvent& a, CircuitEvent& b) {
-		return a.time < b.time;
-	}
-);
-}
+
 
 CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 {
 	if (NE.empty()) {
 		return CircuitEvent();
 	}
-	auto it = std::find(NE.begin(), NE.end(), *this); 
+	auto it = find(NE.begin(), NE.end(), *this); 
 		if (it == NE.end()) {
-		throw std::runtime_error("current event not found in the vector");
+		throw runtime_error("current event not found in the vector");
 	}
 
 		auto nextIt = it + 1;
