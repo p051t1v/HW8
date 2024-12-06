@@ -101,5 +101,5 @@ int Gate::evaluate() const
 		}
 	}
 
-	return;
+	return X;
 }
