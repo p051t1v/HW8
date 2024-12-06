@@ -63,9 +63,18 @@ void CircuitEvent::SortEvents(vector<CircuitEvent>& EZ) {
 		});
 }
 
-void CircuitEvent::AddEvent(int time, int value, Wire* w){
+void CircuitEvent::AddEvent(int time, int value, Wire* w) {
+	bool dupeFound = false;
+	CircuitEvent tempEvent = CircuitEvent(time, value, w);
+	for (int i = 0; i < CE.size(); i++) {
+		if (tempEvent == CE.at(i)) {
+			dupeFound = true;
+		}
+	}
+	if (dupeFound == false) {
 	CE.push_back(CircuitEvent(time, value, w));
 	(*this).SortEvents(CE);
+	}
 }
 
 
@@ -93,5 +102,5 @@ CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 }
 //equality operator
 bool CircuitEvent::operator==(const CircuitEvent& other) const {
-	return this->time == other.time;
+	return (this->time == other.time && this->value == other.value && this->w == other.w);
 }

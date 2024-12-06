@@ -34,10 +34,10 @@ public:
 	//Print UI
 	void printHistory(vector<int> hist) const;
 	//Public Vector
-	vector<int>& hist;
+	
 private:
 	//Variable Defaults
-
+	vector<int> hist;
 	int value = DNF;
 	string name="~";
 	vector<Gate*> drives;

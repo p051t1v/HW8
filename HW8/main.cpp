@@ -182,17 +182,18 @@ int main() {
 				tempEvent = tempEvent.GetNextEvent(events.GetCE());
 			}
 		
-			for (int h = 0; h <= wires.size(); h++) {
+			for (int h = 0; h < wires.size(); h++) {
 				wires.at(h)->SetHist(wires.at(h)->getValue());
 			}
 			timeElapsed = t;
+			cout << t;
 		}
 
 		//
-		
-		for (int i = 0; i <= wires.size();i++) {
+		cout << "everything ran" << endl;
+		/*for (int i = 0; i <= wires.size(); i++) {
 			wires.at(i)->printHistory(wires.at(i)->hist);
-		}
+		}*/
 		
 		//
 		
