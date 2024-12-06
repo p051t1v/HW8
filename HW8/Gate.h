@@ -17,7 +17,7 @@ public:
 	int getType();
 	
 	//Evaluate the gate
-    void evaluate() const;
+    int evaluate() const;
 
 private:
 	int type;

@@ -33,7 +33,7 @@ int Gate::getType()
 }
 
 //Evaluate function
-void Gate::evaluate() const
+int Gate::evaluate() const
 {
 	
 	if((inputs.at(0)->getValue() == X) && (inputs.at(0)->getValue() == X))
