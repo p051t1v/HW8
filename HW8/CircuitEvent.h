@@ -24,6 +24,8 @@ public:
 	//Equality operator
 	bool operator==(const CircuitEvent& other) const;
 
+	bool TimeEqual(const CircuitEvent& other) const;
+
 	//Setters
 
 	void SetTime(int time);
