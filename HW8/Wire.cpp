@@ -53,7 +53,7 @@ void Wire::printHistory() const
 {
 	cout << " " << name << " | ";
 
-	for (int i:hist)
+	for (int i : hist)
 	{
 		if (i == LO)
 		{
@@ -69,4 +69,37 @@ void Wire::printHistory() const
 		}
 	}
 	cout << endl;
+}
+
+void Wire::printBottomUI(int time) {
+	int x = 0;
+	int y = 0;
+	for (int i = 0;i < time;i++) {
+		cout << "_";
+	}
+	cout << endl;
+	cout << "    ";
+	for (int i = 0;i < time;i++) {
+		if (i % 5 != 0) {
+			cout << "-";
+		}
+		else {
+			cout << y;
+
+			if (x % 2 == 0) {
+				y++;
+			}
+			x++;
+		}
+	}
+	cout << endl;
+	cout << "    ";
+	for (int i = 0;i < time; i++) {
+		if (i % 5 == 0) {
+			cout << 5;
+		}
+		else {
+			cout << " ";
+		}
+	}
 }
