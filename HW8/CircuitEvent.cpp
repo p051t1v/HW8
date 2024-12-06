@@ -49,7 +49,7 @@ vector<CircuitEvent> CircuitEvent::GetCE()
 
 bool CircuitEvent::IsEmpty(CircuitEvent& e)
 {
-	if (e == *CE.end()) {
+	if (e == CE.back()) {
 		return true;
 	}
 	return false;
