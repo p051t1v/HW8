@@ -7,8 +7,8 @@
 CircuitEvent::CircuitEvent(int time, int value, Wire* w)
 : time(time),value(value),w(w){}
 
-CircuitEvent::CircuitEvent():
- time(0), value(0), w(nullptr){}
+CircuitEvent::CircuitEvent()
+: time(0), value(0), w(nullptr){}
 
 //Setters
 void CircuitEvent::SetTime(int time){
@@ -50,6 +50,7 @@ vector<CircuitEvent> CircuitEvent::GetCE()
 bool CircuitEvent::IsEmpty(CircuitEvent& e)
 {
 	if (e == *CE.end()) {
+		//determine if e is the last item in the function
 		return true;
 	}
 	return false;
@@ -87,7 +88,7 @@ CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 	}
 	else {
 		cout << "done reading the vector or no object" << endl;
-		return CircuitEvent();
+		return ;
 	}
 
 }
