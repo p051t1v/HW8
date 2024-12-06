@@ -26,14 +26,14 @@ public:
 
 	//Setters
 
-	void setTime(int time);
-	void setValue(int value);
-	void setWire(Wire* w);
+	void SetTime(int time);
+	void SetValue(int value);
+	void SetWire(Wire* w);
 
 	//Getters
 	int GetTime();
-	int getValue();
-	Wire* getWire();
+	int GetValue();
+	Wire* GetWire();
 	vector<CircuitEvent> GetCE();
 	bool IsEmpty(CircuitEvent& e);
 private:

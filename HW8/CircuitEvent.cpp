@@ -11,16 +11,16 @@ CircuitEvent::CircuitEvent():
  time(0), value(0), w(nullptr){}
 
 //Setters
-void CircuitEvent::setTime(int time){
+void CircuitEvent::SetTime(int time){
 	this->time = time;
 }
 
-void CircuitEvent::setValue(int value)
+void CircuitEvent::SetValue(int value)
 {
 	this->value = value;
 }
 
-void CircuitEvent::setWire(Wire* w)
+void CircuitEvent::SetWire(Wire* w)
 {
 	this->w = w;
 }
@@ -32,12 +32,12 @@ int CircuitEvent::GetTime()
 	return time;
 }
 
-int CircuitEvent::getValue()
+int CircuitEvent::GetValue()
 {
 	return value;
 }
 
-Wire* CircuitEvent::getWire()
+Wire* CircuitEvent::GetWire()
 {
 	return w;
 }
