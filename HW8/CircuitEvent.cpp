@@ -87,7 +87,7 @@ CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 	}
 	else {
 		cout << "done reading the vector or no object" << endl;
-		return ;
+		//return ;
 	}
 
 }
