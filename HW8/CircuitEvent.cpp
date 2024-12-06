@@ -49,8 +49,7 @@ vector<CircuitEvent> CircuitEvent::GetCE()
 
 bool CircuitEvent::IsEmpty(CircuitEvent& e)
 {
-	if (e == *CE.end()) {
-		//determine if e is the last item in the function
+	if (e == CE.back()) {
 		return true;
 	}
 	return false;
