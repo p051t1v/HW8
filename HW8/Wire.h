@@ -33,6 +33,7 @@ public:
 	vector<Gate*> getDrives();
 	//Print UI
 	void printHistory() const;
+	void printBottomUI(int time);
 	//Public Vector
 	
 private:
