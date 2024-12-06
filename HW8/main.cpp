@@ -34,6 +34,8 @@ int main() {
 		vector<int> numInputs;
 		vector<Wire*> inputs;
 		Wire* output = nullptr;
+		Wire* input1 = nullptr;
+		Wire* input2 = nullptr;
 		string name;
 		string delay;
 		
@@ -76,19 +78,33 @@ int main() {
 				delay.erase(delay.size() - 2);
 
 				for (int i = 0; i < wires.size(); i++) {
-					if (wires.at(i)->getIndex() == n1 || wires.at(i)->getIndex() == n2) {
-						inputs.push_back(wires.at(i));
+					if (wires.at(i)->getIndex() == n1) {
+						input1 = wires.at(i);
+					}
+					if (wires.at(i)->getIndex() == n2) {
+						input2 = wires.at(i);
 					}
 				}
+
+				//
+				//
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getIndex() == n3) {
 						output = wires.at(i);
 					}
 				}
 				//In case of missing wire
+				if (input1 == nullptr) {
+					input1 = new Wire("", n1);
+				}
+				if (input2 == nullptr) {
+					input2 = new Wire("", n2);
+				}
 				if (output == nullptr){
 				output = new Wire("", n3);
 				}
+				inputs.push_back(input1);
+				inputs.push_back(input2);
 				
 				tempGate = new Gate(type, stoi(delay), inputs, output);
 				for (int i = 0; i < inputs.size(); i++) {
@@ -96,6 +112,8 @@ int main() {
 				}
 
 				inputs.clear();
+				input1 = nullptr;
+				input2 = nullptr;
 				output = nullptr;
 			}
 			else if (input == "NOT") {
@@ -105,7 +123,7 @@ int main() {
 				delay.erase(delay.size() - 2);
 				for (int i = 0; i < wires.size(); i++) {
 					if (wires.at(i)->getIndex() == n1) {
-						inputs.push_back(wires.at(i));
+						input1 = wires.at(i);
 					}
 				}
 				for (int i = 0; i < wires.size(); i++) {
@@ -113,11 +131,19 @@ int main() {
 						output = wires.at(i);
 					}
 				}
+				if (input1 == nullptr) {
+					input1 = new Wire("", n1);
+				}
+				if (output == nullptr) {
+					output = new Wire("", n2);
+				}
+				inputs.push_back(input1);
 				tempGate = new Gate(type, stoi(delay), inputs, output);
 				for (int i = 0; i < inputs.size(); i++) {
 					inputs.at(i)->AddDrives(tempGate);
 				}
 				inputs.clear();
+				input1 = nullptr;
 				output = nullptr;
 			}
 			fs >> input;
