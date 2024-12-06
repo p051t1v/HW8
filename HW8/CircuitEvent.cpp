@@ -49,6 +49,8 @@ vector<CircuitEvent> CircuitEvent::GetCE()
 
 bool CircuitEvent::IsEmpty(CircuitEvent& e)
 {
+	if (e == *CE.end()) {
+
 	if (e == CE.back()) {
 		return true;
 	}
@@ -93,7 +95,13 @@ CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 }
 //equality operator
 bool CircuitEvent::operator==(const CircuitEvent& other) const {
+	return this->time == other.time && this->value == other.value && this->w == other.w;
+}
+
+//compare time
+bool CircuitEvent::timeCompare(const CircuitEvent& other) const {
 	return this->time == other.time;
+}
 }
 
 bool CircuitEvent::EventCompare(const CircuitEvent& other) const {
