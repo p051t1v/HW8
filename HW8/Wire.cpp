@@ -68,5 +68,8 @@ void Wire::printHistory(vector<int> hist) const
 			cout << "X";
 		}
 	}
+}
+
+void Wire::PrintBottomUI(int t) {
 	
 }
