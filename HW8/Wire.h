@@ -34,7 +34,7 @@ public:
 	//Print UI
 	void printHistory(vector<int> hist) const;
 	//Public Vector
-	vector<int>& hist;
+	vector<int> hist;
 private:
 	//Variable Defaults
 

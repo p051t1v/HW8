@@ -14,10 +14,7 @@ void Wire::SetVal(int value) {
 
 void Wire::SetHist(int value)
 {
-	if (value != NULL)
-	{
-		hist.push_back(this->value);
-	}
+		hist.push_back(value);
 }
 //Adding Drives (inputs) to a gate
 void Wire::AddDrives(Gate* gate) 
