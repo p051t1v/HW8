@@ -36,6 +36,7 @@ public:
 	Wire* GetWire();
 	vector<CircuitEvent> GetCE();
 	bool IsEmpty(CircuitEvent& e);
+	bool timeCompare(const CircuitEvent& other) const;
 private:
 	int time;
 	int value;
