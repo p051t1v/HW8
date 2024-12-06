@@ -38,66 +38,66 @@ int Gate::evaluate() const
 	
 	if((inputs.at(0)->getValue() == X) && (inputs.at(0)->getValue() == X))
 	{
-		output->SetVal(HI);
+		return HI;
 
 	}
 	else if (type == AND)
 	{
 		if (inputs.at(0)->getValue() == HI && inputs.at(1)->getValue() == HI)
 		{
-			output->SetVal(HI);
+			return HI;
 		}
 		else if(inputs.at(0)->getValue() == LO || inputs.at(1)->getValue() == LO)
 		{
-			output->SetVal(LO);
+			return LO;
 		}
 		else
 		{
-			output->SetVal(X);
+			return X;
 		}
 	}
 	else if (type == OR) 
 	{
 		if (inputs.at(0)->getValue() == HI || inputs.at(1)->getValue() == HI) 
 		{
-			output->SetVal(HI);
+			return HI;
 		}
 		else if(inputs.at(0)->getValue() == LO && inputs.at(1)->getValue() == LO)
 		{
-			output->SetVal(LO);
+			return LO;
 		}
 		else
 		{
-			output->SetVal(X);
+			return X;
 		}
 	}
 	else if (type == XOR)
 	{
 		if (inputs.at(0)->getValue() == X || inputs.at(1)->getValue() == X) 
 		{
-			output->SetVal(X);
+			return X;
 		}
 		else if (inputs.at(0)->getValue() != inputs.at(1)->getValue()) 
 		{
-			output->SetVal(HI);
+			return HI;
 		}
 		else 
 		{
-			output->SetVal(LO);
+			return LO;
 		}
 	}
 	else if (type == NOT) {
 		if (inputs.at(0)->getValue() == HI)
 		{
-			output->SetVal(LO);
+			return LO;
 		}
 		else if (inputs.at(0)->getValue() == LO)
 		{
-			output->SetVal(HI);
+			return HI;
 		}
 		else
 		{
-			output->SetVal(X);
+			return X;
 		}
 	}
 
