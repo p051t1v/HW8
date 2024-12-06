@@ -175,7 +175,7 @@ int main() {
 				tempDrives = tempWire->getDrives();
 				//3)create events
 				for (int i = 0; i < tempDrives.size(); i++) {
-					events.AddEvent(t + tempDrives.at(i)->getDelay(), 1, tempDrives.at(i)->getOutput());
+					events.AddEvent(t + tempDrives.at(i)->getDelay(), tempDrives.at(i)->evaluate(), tempDrives.at(i)->getOutput());
 				}
 				//4)find next event
 				tempDrives.clear();
