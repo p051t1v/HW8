@@ -68,4 +68,5 @@ void Wire::printHistory(vector<int> hist) const
 			cout << "X";
 		}
 	}
+	
 }
