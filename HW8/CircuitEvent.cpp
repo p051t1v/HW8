@@ -95,3 +95,7 @@ CircuitEvent CircuitEvent::GetNextEvent(vector<CircuitEvent> NE)
 bool CircuitEvent::operator==(const CircuitEvent& other) const {
 	return this->time == other.time;
 }
+
+bool CircuitEvent::EventCompare(const CircuitEvent& other) const {
+	return this->time == other.time && this->value == value && this->w == w;
+}
