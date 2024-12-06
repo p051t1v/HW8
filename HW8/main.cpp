@@ -39,7 +39,8 @@ int main() {
 		
 		int type = 0;
 		int index;
-		fs >> input;
+		string circuitName;
+		fs >> input >> circuitName;
 		vector<Wire*> wires;
 		vector<Gate*> gates;
 		Gate* tempGate;
@@ -165,9 +166,10 @@ int main() {
 		CircuitEvent tempEvent = (events.GetCE()).at(0);
 		Wire* tempWire = nullptr;
 		vector<Gate*> tempDrives;
-		int timeElapsed;
-		for (int t = 0; t <= 70 && !(events.IsEmpty(tempEvent)); t++) {
-			while (t == tempEvent.GetTime()) {
+		int timeElapsed = 0;
+		bool endOfCircuit = false;
+		for (int t = 0; t <= 70 && !endOfCircuit; t++) {
+			while (t == tempEvent.GetTime() && !endOfCircuit) {
 				//1)do event
 				tempWire = tempEvent.GetWire();
 				tempWire->SetVal(tempEvent.GetValue());
@@ -179,7 +181,13 @@ int main() {
 				}
 				//4)find next event
 				tempDrives.clear();
-				tempEvent = tempEvent.GetNextEvent(events.GetCE());
+
+				if (events.IsEmpty(tempEvent)) {
+					endOfCircuit = true;
+				}
+				else {
+					tempEvent = tempEvent.GetNextEvent(events.GetCE());
+				}
 			}
 		
 			for (int h = 0; h < wires.size(); h++) {
@@ -191,10 +199,13 @@ int main() {
 
 		//
 		cout << "everything ran" << endl;
-		/*for (int i = 0; i <= wires.size(); i++) {
-			wires.at(i)->printHistory(wires.at(i)->hist);
-		}*/
-		
+		for (int i = 0; i < wires.size(); i++) {
+			
+			wires.at(i)->printHistory();
+			cout << "   |" << endl;
+		}
+		cout << "Circuit Name: " << circuitName << endl;
+		cout << "Time Elapsed: " << timeElapsed << "ns";
 		//
 		
 		

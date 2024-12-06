@@ -32,7 +32,7 @@ public:
 	vector<int> getHistory();
 	vector<Gate*> getDrives();
 	//Print UI
-	void printHistory(vector<int> hist) const;
+	void printHistory() const;
 	//Public Vector
 	
 private:

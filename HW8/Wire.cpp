@@ -49,9 +49,9 @@ int Wire::getValue()
 }
 
 // Print Function
-void Wire::printHistory(vector<int> hist) const
+void Wire::printHistory() const
 {
-	cout << name <<" |";
+	cout << " " << name << " | ";
 
 	for (int i:hist)
 	{
@@ -68,4 +68,5 @@ void Wire::printHistory(vector<int> hist) const
 			cout << "X";
 		}
 	}
+	cout << endl;
 }
